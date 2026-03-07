@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dungeon Loot Splitter</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+<header class="page-header">
+    <h1>Dungeon Loot Splitter</h1>
+    
+</header>
+
+<main class="page-main">
+
+   <!-- Input panel for adding loot + setting party size -->
+    <section class="panel panel-input">
+        <h2>Add Loot</h2>
+
+        <!-- Loot name -->
+        <div class="field">
+            <label for="lootName">Item name</label>
+            <input id="lootName" type="text" placeholder="Magic sword">
+        </div>
+
+        <!-- Loot value -->
+        <div class="field">
+            <label for="lootValue">Value (gold)</label>
+            <input id="lootValue" type="number" min="0" step="0.01" placeholder="100">
+        </div>
+
+        <!-- Loot quantity -->
+        <div class="field">
+            <label for="lootQuantity">Quantity</label>
+            <input id="lootQuantity" type="number" min="1" step="1" value="1">
+        </div>
+
+        <!-- Add loot button triggers addLoot() -->
+        <button id="addLootBtn" type="button">Add loot</button>
+
+        <hr>
+
+        <!-- Party size input -->
+        <h2>Party size</h2>
+        <div class="field">
+            <label for="partySize">Number of party members</label>
+            <input id="partySize" type="number" min="1" step="1" value="1">
+        </div>
+
+        <!-- Error messages appear here -->
+        <p id="errorMessage" class="error hidden"></p>
+    </section>
+
+
+   <!-- Loot list panel -->
+    <section class="panel panel-loot">
+        <h2>Loot list</h2>
+
+        <!-- Shown when loot array is empty -->
+       
+
+        <!-- Loot table header -->
+        <div class="loot-table">
+            <div class="loot-header">
+                <div class="loot-cell">Item:</div>
+                <div class="loot-cell">Value:</div>
+                <div class="loot-cell">Quantity:</div>
+                <div class="loot-cell"></div>
+            </div>
+
+
+ <p id="noLootMessage" class="muted">No loot added yet. Add some items to get started.</p>
+
+            <!-- JS inserts rows here -->
+            <div id="lootRows"></div>
+        </div>
+    </section>
+
+
+    <!-- Results -->
+    <section class="panel panel-results">
+        <h2>Split results</h2>
+
+        <!-- Hidden until updateUI() reveals it -->
+        <div id="resultsPanel" class="results hidden">
+            <p><span class="label">Total loot value:</span>
+                <span id="totalLoot">0.00</span> gold</p>
+
+            <p><span class="label">Per party member:</span>
+                <span id="lootPerMember">0.00</span> gold</p>
+        </div>
+
+      
+    </section>
+
+</main>
+
+
+<script src="script.js"></script>
+</body>
+</html>
