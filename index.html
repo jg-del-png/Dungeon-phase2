@@ -96,7 +96,20 @@
     </section>
 
 </main>
+<footer>
 
+<p> the UI gets all the displayed information from the loot array and party size variable, so the JS functions updateUI() and calculateLoot() are responsible for keeping everything in sync.</p>
+<p>
+Adding quantity to the loot allows for more complex scenarios, like multiple potions or a stack of gold coins. The total value is calculated by multiplying the item value by its quantity, and then summing all items together. The loot per party member is the total divided by the party size.</p>
+
+<p>The updateUI() function calculates the total loot value and loot per member, then updates the DOM elements. It also handles showing or hiding the "no loot" message and results panel.</p>
+
+<p>The visibility of UI elements is controlled by state variables and CSS classes. The "no loot" message is shown when the loot array is empty, and the results panel is shown when there is at least one item in the loot array.</p>
+
+<p>Conditional logic is used to validate user input and ensure that the party size is at least 1, and that loot items have a name and a non-negative value. Error messages are displayed when invalid input is detected.</p>
+
+
+</footer>
 
 <script src="script.js"></script>
 </body>
